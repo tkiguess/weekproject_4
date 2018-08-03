@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<form action="#"
-      th:action="@{/process}"
-      th:object="${course}"
-      method="post">
+<h1>Welcome to the World Bank.</h1>
+<h3>Input your transactions now.</h3>
+
+<form action="#" th:action="@{/process}" th:object="${course}" method="post">
     Account :<input type="text" th:field="*{acct}" />
     <span th:if="${#fields.hasErrors('acct')}"
           th:errors="*{acct}"></span><br />

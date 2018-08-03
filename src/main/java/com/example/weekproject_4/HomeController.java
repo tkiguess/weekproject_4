@@ -29,6 +29,7 @@ public class HomeController {
         return "bankform";
     }
 
+
     @PostMapping("/process")
     public String processForm(@Valid Bank Bank, BindingResult result){
         if (result.hasErrors()){
