@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/process}"
+      th:object="${course}"
+      method="post">
+    Account :<input type="text" th:field="*{acct}" />
+    <span th:if="${#fields.hasErrors('acct')}"
+          th:errors="*{acct}"></span><br />
+    Deposit?/withdraw? :<input type="text" th:field="*{action}" />
+    <span th:if="${#fields.hasErrors('action')}"
+          th:errors="*{action}"></span><br />
+    Reason :<textarea rows="3" th:field="*{reason}" />
+    <span th:if="${#fields.hasErrors('reason')}"
+          th:errors="*{reason}"></span><br/>
+    Amount :<input type="text" th:field="*{amount}" />
+    <span th:if="${#fields.hasErrors('amount')}"
+          th:errors="*{amount}"></span><br />
+    <br />
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>

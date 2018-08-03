@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<a href="/add">Make another transaction</a><br />
+<table>
+    <tr>
+        <th>Account#</th>
+        <th>withdraw/deposit</th>
+        <th>Amount</th>
+        <td>     Reason</td>
+    </tr>
+    <tr th:each="course : ${courses}">
+        <td th:text="${course.acct}"></td>
+        <td th:text="${course.action}"></td>
+        <td th:text="${course.amount}"></td>
+        <td th:text="${course.reason}"></td>
+
+    </tr>
+</table>
+</body>
+</html>
